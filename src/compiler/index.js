@@ -3,7 +3,6 @@
 import { parse } from "./parse.js";
 import { generate } from "./codegen.js";
 export function compileToFunctions(template) {
-    debugger
   // 我们需要把html字符串变成render函数
   // 1.把html代码转成ast语法树  ast用来描述代码本身形成树结构 不仅可以描述html 也能描述css以及js语法
   // 很多库都运用到了ast 比如 webpack babel eslint等等

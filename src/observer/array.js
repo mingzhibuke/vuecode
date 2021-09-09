@@ -36,6 +36,7 @@ methodsToPatch.forEach((method) => {
     // 如果有新增的元素 inserted是一个数组 调用Observer实例的observeArray对数组每一项进行观测
     if (inserted) ob.observeArray(inserted);
     // 之后咱们还可以在这里检测到数组改变了之后从而触发视图更新的操作--后续源码会揭晓
+    ob.dep.notify(); 
     return result;
   };
 });

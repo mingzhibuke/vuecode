@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="./vue/vue.js"></script>
 </head>
 
 <body>
@@ -14,7 +15,23 @@
 
 </html>
 <script type="module">
-    import Vue from './src/index.js'
+    // import Vue from './src/index.js'
+    // let vm = new Vue({
+    //     el: '#app',
+    //     data() {
+    //         return {
+    //             message: 'Hello Vue!',
+    //             name: '测试',
+    //             age: "18岁"
+    //         }
+
+    //     },
+    //     template: `<div id="a">{{message}}</div>`
+    // })
+    // setTimeout(() => {
+    //     vm.message = 'lilinrui'
+    // }, 5000)
+    // import Vue from './vue/vue.js'
     let vm = new Vue({
         el: '#app',
         data() {
@@ -25,10 +42,14 @@
             }
 
         },
-        template: `<div id="a">{{message}}</div>`
+        template: `<div id="a">{{message}}</div>`,
+        watch: {
+            message(newVal, oldVal) {
+                console.log(newVal);
+            },
+        }
     })
     setTimeout(() => {
         vm.message = 'lilinrui'
-        vm._update(vm._render());
     }, 5000)
 </script>
